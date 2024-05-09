@@ -11,6 +11,12 @@ product/etc/ambient/matcher_tah.leveldb
 product/etc/firmware/music_detector.descriptor
 product/etc/firmware/music_detector.sound_model
 
+# Charger
+product/etc/res/images/charger/battery_fail.png
+product/etc/res/images/charger/battery_scale.png
+product/etc/res/images/charger/main_font.png
+product/etc/res/values/charger/animation.txt
+
 # Felica
 product/etc/felica/common.cfg
 product/etc/felica/mfm.cfg
