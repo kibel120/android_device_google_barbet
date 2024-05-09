@@ -45,6 +45,11 @@ $(call inherit-product, device/google/barbet/device-barbet.mk)
 $(call inherit-product-if-exists, vendor/google_devices/barbet/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/barbet/prebuilts/device-vendor-barbet.mk)
 
+# Inherit some common pb stuff.
+$(call inherit-product, vendor/pb/config/common_full_phone.mk)
+
+include device/google/barbet/device-custom.mk
+
 # Don't build super.img.
 PRODUCT_BUILD_SUPER_PARTITION := false
 
@@ -52,7 +57,17 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # PRODUCT_RESTRICT_VENDOR_FILES := all
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
 PRODUCT_NAME := aosp_barbet
 PRODUCT_DEVICE := barbet
-PRODUCT_MODEL := AOSP on barbet
+PRODUCT_MODEL := Pixel 5a
+
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=redfin
+
+$(call inherit-product, vendor/google/barbet/barbet-vendor.mk)
